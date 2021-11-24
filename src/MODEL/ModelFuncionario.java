@@ -1,15 +1,15 @@
 package MODEL;
 
+public class ModelFuncionario {
 
-public class FuncionarioBeans {
-  private int Codigo;
-  private String Nome;
-  private String Cargo;
-  private String DataCad;
-  
-  public FuncionarioBeans(){
-      
-  }
+    private int Codigo;
+    private String Nome;
+    private String Cargo;
+    private String DataCad;
+
+    public ModelFuncionario() {
+
+    }
 
     public int getCodigo() {
         return Codigo;
@@ -42,7 +42,5 @@ public class FuncionarioBeans {
     public void setDataCad(String DataCad) {
         this.DataCad = DataCad;
     }
-  
-  
-  
+
 }

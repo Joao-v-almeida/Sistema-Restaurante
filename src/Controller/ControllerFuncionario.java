@@ -1,64 +1,60 @@
-
 package Controller;
 
-
-import MODEL.FuncionarioBeans;
+import MODEL.ModelFuncionario;
 import DAO.DAOFuncionario;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
 public class ControllerFuncionario {
-    
-    DAOFuncionario FuncD;
-    
-    public ControllerFuncionario(){
-       FuncD = new DAOFuncionario();
-       
+
+    DAOFuncionario DAOFuncionario;
+
+    public ControllerFuncionario() {
+        DAOFuncionario = new DAOFuncionario();
+
     }
-    
-    public boolean verificarDados(FuncionarioBeans Func){
-        if(Func.getNome().equals("")){
+
+    public boolean verificarDados(ModelFuncionario Funcionario) {
+        if (Funcionario.getNome().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
-        
-           if(Func.getCargo().equals("Selecione um Cargo")){
+
+        if (Funcionario.getCargo().equals("Selecione um Cargo")) {
             JOptionPane.showMessageDialog(null, "Selecione um Cargo", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
-        
-        FuncD.cadastrarFuncionario(Func);
+
+        DAOFuncionario.cadastrarFuncionario(Funcionario);
         return true;
     }
-    
-    public String controleDeCodigo(){
-        return FuncD.proximoFuncionario();
+
+    public String controleDeCodigo() {
+        return DAOFuncionario.proximoFuncionario();
     }
-    
-    public void controlePesquisa(String Pesquisa, DefaultTableModel Modelo){
-        FuncD.buscarFuncionario(Pesquisa, Modelo);
+
+    public void controlePesquisa(String Pesquisa, DefaultTableModel Modelo) {
+        DAOFuncionario.buscarFuncionario(Pesquisa, Modelo);
     }
-    
-    public FuncionarioBeans controlePreencherCampos(int Codigo){
-        return FuncD.PreencherCampos(Codigo);
+
+    public ModelFuncionario controlePreencherCampos(int Codigo) {
+        return DAOFuncionario.PreencherCampos(Codigo);
     }
-    
-    
-     public boolean verificarDadosEditar(FuncionarioBeans Func){
-        if(Func.getNome().equals("")){
+
+    public boolean verificarDadosEditar(ModelFuncionario Funcionario) {
+        if (Funcionario.getNome().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
-        
-          if(Func.getCargo().equals("Selecione um Cargo")){
+
+        if (Funcionario.getCargo().equals("Selecione um Cargo")) {
             JOptionPane.showMessageDialog(null, "Selecione um Cargo", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
-        
-        FuncD.editarFuncionario(Func);
+
+        DAOFuncionario.editarFuncionario(Funcionario);
         return true;
     }
-    
+
 }

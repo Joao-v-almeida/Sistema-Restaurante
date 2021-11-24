@@ -1,4 +1,3 @@
-
 package VIEW;
 
 import Utilitarios.FundoTela;
@@ -6,36 +5,34 @@ import javax.swing.JFrame;
 import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 
-
 public class FrmPrincipal extends javax.swing.JFrame {
 
     FundoTela FundoTela;
     FrmCliente FrmCliente;
-    formFuncionario formfuncionario;
+    FrmFuncionario FrmFuncionario;
     FrmCardapio FrmCardapio;
-    
+
     public FrmPrincipal() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new GridLayout());
         FundoTela = new FundoTela("imagens/teste1.jpg");
         getContentPane().add(FundoTela);
-        
+
         menuCliente.setIcon(new ImageIcon("Imagens/Cliente.png"));
         menuFuncionario.setIcon(new ImageIcon("Imagens/funcionario.png"));
         menuCardapio.setIcon(new ImageIcon("Imagens/hamburger.png"));
         menuEntregador.setIcon(new ImageIcon("Imagens/transporte.png"));
-        menuCadastro.setIcon(new ImageIcon ("Imagens/add.png"));
+        menuCadastro.setIcon(new ImageIcon("Imagens/add.png"));
         menuCaixa.setIcon(new ImageIcon("Imagens/caixa.png"));
         menuRelatorio.setIcon(new ImageIcon("Imagens/relatorio.png"));
         menuSair.setIcon(new ImageIcon("Imagens/sair.png"));
         menuPedido.setIcon(new ImageIcon("Imagens/pedido.png"));
-        
+
         ImageIcon icone = new ImageIcon("Imagens/ico_cardapio.png");
         setIconImage(icone.getImage());
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -115,15 +112,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuClienteActionPerformed
-      FrmCliente = new FrmCliente();
-      FundoTela.add(FrmCliente);
-      FrmCliente.setVisible(true);
+        FrmCliente = new FrmCliente();
+        FundoTela.add(FrmCliente);
+        FrmCliente.setVisible(true);
     }//GEN-LAST:event_menuClienteActionPerformed
 
     private void menuFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuFuncionarioActionPerformed
-      formfuncionario = new formFuncionario();
-      FundoTela.add(formfuncionario);
-      formfuncionario.setVisible(true);
+        FrmFuncionario = new FrmFuncionario();
+        FundoTela.add(FrmFuncionario);
+        FrmFuncionario.setVisible(true);
     }//GEN-LAST:event_menuFuncionarioActionPerformed
 
     private void menuCardapioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCardapioActionPerformed
@@ -132,9 +129,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmCardapio.setVisible(true);
     }//GEN-LAST:event_menuCardapioActionPerformed
 
-   
     public static void main(String args[]) {
-       
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -154,7 +150,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FrmPrincipal().setVisible(true);
