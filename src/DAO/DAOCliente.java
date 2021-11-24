@@ -36,7 +36,7 @@ public class DAOCliente {
     
            
        } catch (SQLException ex) { 
-          JOptionPane.showMessageDialog(null, "Erro ao Cadastrar com o Banco", "Erro",0 ,new ImageIcon("Imagens/btn_sair.png"));
+          JOptionPane.showMessageDialog(null, "Erro ao Cadastrar com o Banco", "Erro",0 ,new ImageIcon("Imagens/erro.png"));
     } 
  }     
        public String proximoCliente(){
@@ -50,7 +50,7 @@ public class DAOCliente {
                return "1";
            }
        } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "Erro ao Buscar Registro", "Erro",0 ,new ImageIcon("Imagens/btn_sair.png"));
+           JOptionPane.showMessageDialog(null, "Erro ao Buscar Registro", "Erro",0 ,new ImageIcon("Imagens/erro.png"));
            return "0";
                 }
             }
@@ -65,7 +65,7 @@ public class DAOCliente {
                 Modelo.addRow(new Object [] {rs.getString("cli_cod"), rs.getString("cli_nome"), rs.getString("cli_rua"), rs.getString("cli_bairro"), rs.getString("cli_telefone")} );
            }
        } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "Erro ao Buscar Cliente", "Erro",0 ,new ImageIcon("Imagens/btn_sair.png"));
+           JOptionPane.showMessageDialog(null, "Erro ao Buscar Cliente", "Erro",0 ,new ImageIcon("Imagens/erro.png"));
        }
                 
             }
@@ -86,7 +86,7 @@ public class DAOCliente {
                Cliente.setDataCad(Corretores.ConverterParaJava(rs.getString("cli_data_cad")));
            }
        } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "Erro ao Buscar Cliente", "Erro",0 ,new ImageIcon("Imagens/btn_sair.png"));
+           JOptionPane.showMessageDialog(null, "Erro ao Buscar Cliente", "Erro",0 ,new ImageIcon("Imagens/erro.png"));
        }
            return Cliente;
             }
@@ -107,7 +107,7 @@ public class DAOCliente {
     
            
        } catch (SQLException ex) { 
-          JOptionPane.showMessageDialog(null, "Erro ao Editar Registro", "Erro",0 ,new ImageIcon("Imagens/btn_sair.png"));
+          JOptionPane.showMessageDialog(null, "Erro ao Editar Registro", "Erro",0 ,new ImageIcon("Imagens/erro.png"));
     }  
              
          }

@@ -17,17 +17,17 @@ public class ControllerCardapio {
 
     public boolean verificarDados(ModelCardapio Cardapio) {
         if (Cardapio.getDescricao().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo Descrição ", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campo Descrição ", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
         if (Cardapio.getTipo().equals("Selecione um Item")) {
-            JOptionPane.showMessageDialog(null, "Selecione um Item", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Selecione um Item", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
         if (Cardapio.getValor() == 0) {
-            JOptionPane.showMessageDialog(null, "Preencha o valor", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o valor", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
@@ -49,17 +49,17 @@ public class ControllerCardapio {
 
     public boolean verificarDadosEditar(ModelCardapio Cardapio) {
         if (Cardapio.getDescricao().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
         if (Cardapio.getTipo().equals("Selecione um Item")) {
-            JOptionPane.showMessageDialog(null, "Selecione um Item", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Selecione um Item", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
         if (Cardapio.getValor() == 0) {
-            JOptionPane.showMessageDialog(null, "Preencha o valor", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o valor", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 

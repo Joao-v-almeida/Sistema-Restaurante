@@ -30,7 +30,7 @@ public class DAOEntregador {
             JOptionPane.showMessageDialog(null, "Registro Salvo com Sucesso", "Salvo", 1, new ImageIcon("Imagens/ok.png"));
 
         } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Erro ao Cadastrar Registro" + erro, "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Erro ao Cadastrar Registro" + erro, "Erro", 0, new ImageIcon("Imagens/erro.png"));
         }
     }
 
@@ -45,7 +45,7 @@ public class DAOEntregador {
                 return "1";
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Buscar Registro", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Erro ao Buscar Registro", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return "0";
         }
 
@@ -62,7 +62,7 @@ public class DAOEntregador {
             }
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Buscar Dados", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Erro ao Buscar Dados", "Erro", 0, new ImageIcon("Imagens/erro.png"));
         }
 
     }
@@ -81,7 +81,7 @@ public class DAOEntregador {
             }
 
         } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Erro ao Buscar Registro" + erro, "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Erro ao Buscar Registro" + erro, "Erro", 0, new ImageIcon("Imagens/erro.png"));
         }
 
         return Entregador;
@@ -99,7 +99,7 @@ public class DAOEntregador {
             JOptionPane.showMessageDialog(null, "Registro editado com Sucesso", "Salvo", 1, new ImageIcon("Imagens/ok.png"));
 
         } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Erro ao Editar Registro" + erro, "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Erro ao Editar Registro" + erro, "Erro", 0, new ImageIcon("Imagens/erro.png"));
         }
     }
 }

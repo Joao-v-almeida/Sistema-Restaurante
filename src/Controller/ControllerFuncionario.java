@@ -17,12 +17,12 @@ public class ControllerFuncionario {
 
     public boolean verificarDados(ModelFuncionario Funcionario) {
         if (Funcionario.getNome().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
         if (Funcionario.getCargo().equals("Selecione um Cargo")) {
-            JOptionPane.showMessageDialog(null, "Selecione um Cargo", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Selecione um Cargo", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
@@ -44,12 +44,12 @@ public class ControllerFuncionario {
 
     public boolean verificarDadosEditar(ModelFuncionario Funcionario) {
         if (Funcionario.getNome().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
         if (Funcionario.getCargo().equals("Selecione um Cargo")) {
-            JOptionPane.showMessageDialog(null, "Selecione um Cargo", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Selecione um Cargo", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 

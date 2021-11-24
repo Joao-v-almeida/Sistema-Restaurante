@@ -32,7 +32,7 @@ public class DAOFuncionario {
 
         } catch (SQLException ex) {
             //JOptionPane.showMessageDialog(null, ex, "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
-            JOptionPane.showMessageDialog(null, "Erro ao Cadastrar Registro", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Erro ao Cadastrar Registro", "Erro", 0, new ImageIcon("Imagens/erro.png"));
         }
     }
 
@@ -47,7 +47,7 @@ public class DAOFuncionario {
                 return "1";
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Buscar Registro", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Erro ao Buscar Registro", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return "0";
         }
 
@@ -64,7 +64,7 @@ public class DAOFuncionario {
             }
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Buscar Funcionário", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Erro ao Buscar Funcionário", "Erro", 0, new ImageIcon("Imagens/erro.png"));
         }
 
     }
@@ -84,7 +84,7 @@ public class DAOFuncionario {
             }
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Buscar Funcionário", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Erro ao Buscar Funcionário", "Erro", 0, new ImageIcon("Imagens/erro.png"));
         }
 
         return Func;
@@ -105,7 +105,7 @@ public class DAOFuncionario {
 
         } catch (SQLException ex) {
             //JOptionPane.showMessageDialog(null, ex, "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
-            JOptionPane.showMessageDialog(null, "Erro ao Editar Registro", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Erro ao Editar Registro", "Erro", 0, new ImageIcon("Imagens/erro.png"));
         }
     }
 }

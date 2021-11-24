@@ -20,7 +20,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FundoTela = new FundoTela("imagens/fundoTela.jpg");
         getContentPane().add(FundoTela);
 
-        menuCliente.setIcon(new ImageIcon("Imagens/Clientes.png"));
+        menuCliente.setIcon(new ImageIcon("Imagens/Cliente.png"));
+        menuPedido.setIcon(new ImageIcon("Imagens/pedido.png"));
         menuFuncionario.setIcon(new ImageIcon("Imagens/funcionario.png"));
         menuCardapio.setIcon(new ImageIcon("Imagens/hamburger.png"));
         menuEntregador.setIcon(new ImageIcon("Imagens/transporte.png"));
@@ -29,7 +30,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuRelatorio.setIcon(new ImageIcon("Imagens/relatorio.png"));
         menuSair.setIcon(new ImageIcon("Imagens/sair.png"));
 
-        ImageIcon icone = new ImageIcon("Imagens/ico_cardapio.png");
+        ImageIcon icone = new ImageIcon("Imagens/sistema.png");
         setIconImage(icone.getImage());
     }
 
@@ -49,7 +50,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Pizzaria Shirae");
+        setTitle("Sistema Restaurante");
 
         menuCadastro.setText("Cadastro");
 

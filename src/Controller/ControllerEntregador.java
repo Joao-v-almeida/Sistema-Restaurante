@@ -17,7 +17,7 @@ public class ControllerEntregador {
 
     public boolean verificarDados(ModelEntregador Entregador) {
         if (Entregador.getNome().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
@@ -39,7 +39,7 @@ public class ControllerEntregador {
 
     public boolean verificarDadosEditar(ModelEntregador Entregador) {
         if (Entregador.getNome().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
