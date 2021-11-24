@@ -101,7 +101,7 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tbFuncionario);
 
-        btNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/inserir.png"))); // NOI18N
+        btNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/adicionar.png"))); // NOI18N
         btNovo.setContentAreaFilled(false);
         btNovo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btNovo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

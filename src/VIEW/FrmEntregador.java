@@ -107,7 +107,7 @@ public class FrmEntregador extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tbEntregador);
 
-        btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/inserir.png"))); // NOI18N
+        btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/adicionar.png"))); // NOI18N
         btnNovo.setContentAreaFilled(false);
         btnNovo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnNovo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

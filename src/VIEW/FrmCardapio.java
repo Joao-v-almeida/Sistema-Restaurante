@@ -106,7 +106,7 @@ public class FrmCardapio extends javax.swing.JInternalFrame {
             }
         });
 
-        btnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/salvar-arquivo.png"))); // NOI18N
+        btnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/salvar.png"))); // NOI18N
         btnCadastrar.setContentAreaFilled(false);
         btnCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
