@@ -2,7 +2,7 @@
 package MODEL;
 
 
-public class ClienteBeans {
+public class ModelCliente {
     private int Codigo;
     private String Nome;
     private String Rua;
@@ -10,7 +10,7 @@ public class ClienteBeans {
     private String Telefone;
     private String DataCad;
     
-    public ClienteBeans(){
+    public ModelCliente(){
         
         
     }

@@ -1,14 +1,12 @@
 
 package DAO;
 
-import MODEL.ClienteBeans;
+import MODEL.ModelCliente;
 import Utilitarios.Conexao;
 import Utilitarios.Corretores;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -22,7 +20,7 @@ public class DAOCliente {
        
    } 
    
-   public void cadastrarCliente(ClienteBeans Cliente){
+   public void cadastrarCliente(ModelCliente Cliente){
        try {
            String SQLInsertion = "insert into clientes(cli_nome, cli_rua, cli_bairro, cli_telefone, cli_data_cad) values(?,?,?,?,?)";
            PreparedStatement st = Conexao.getConnection().prepareStatement(SQLInsertion);
@@ -72,8 +70,8 @@ public class DAOCliente {
                 
             }
             
-            public ClienteBeans PreencherCampos(int Codigo){
-                ClienteBeans Cliente = new ClienteBeans();
+            public ModelCliente PreencherCampos(int Codigo){
+                ModelCliente Cliente = new ModelCliente();
                 try {
            String SQLSelection = "SELECT * FROM clientes WHERE cli_cod = ?";
            PreparedStatement st = Conexao.getConnection().prepareStatement(SQLSelection);
@@ -93,7 +91,7 @@ public class DAOCliente {
            return Cliente;
             }
             
-         public void editarCliente(ClienteBeans Cliente){
+         public void editarCliente(ModelCliente Cliente){
             try {
            String SQLInsertion = "UPDATE clientes SET cli_nome = ?, cli_rua = ?, cli_bairro = ?, cli_telefone = ? WHERE cli_cod = ?";
            PreparedStatement st = Conexao.getConnection().prepareStatement(SQLInsertion);

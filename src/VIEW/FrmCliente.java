@@ -2,7 +2,7 @@
 package VIEW;
 
 
-import MODEL.ClienteBeans;
+import MODEL.ModelCliente;
 import Controller.ControllerCliente;
 import DAO.DAOCliente;
 import java.text.SimpleDateFormat;
@@ -13,17 +13,17 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 
 
-public class formCliente extends javax.swing.JInternalFrame {
+public class FrmCliente extends javax.swing.JInternalFrame {
 
     MaskFormatter FormatoTel;
     SimpleDateFormat FormatoData;
     Date DataAtual;
-    ClienteBeans ClienteB;
+    ModelCliente ModelCliente;
     ControllerCliente ClienteC;
     DefaultTableModel Modelo;
     
     
-    public formCliente() {
+    public FrmCliente() {
         initComponents();
         //txCod.setEnabled(false);
         habilitarCampos(false);
@@ -31,7 +31,7 @@ public class formCliente extends javax.swing.JInternalFrame {
         FormatoData = new SimpleDateFormat("dd/MM/yyyy");
         
         
-        ClienteB = new ClienteBeans();
+        ModelCliente = new ModelCliente();
         ClienteC = new ControllerCliente();
         
         
@@ -303,7 +303,7 @@ public class formCliente extends javax.swing.JInternalFrame {
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
       popularClienteBeans();   
-      ClienteC.verificarDados(ClienteB);
+      ClienteC.verificarDados(ModelCliente);
       LimparCmapos();
     }//GEN-LAST:event_btCadastrarActionPerformed
 
@@ -321,19 +321,19 @@ public class formCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tbClienteMouseClicked
 
     private void tbClienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClienteMousePressed
-        ClienteB = ClienteC.controlePreencherCampos(Integer.parseInt(Modelo.getValueAt(tbCliente.getSelectedRow(), 0).toString()));
-        txCod.setText(ClienteB.getCodigo()+"");
-        txNome.setText(ClienteB.getNome());
-        txRua.setText(ClienteB.getRua());
-        txBairro.setText(ClienteB.getBairro());
-        txTelefone.setText(ClienteB.getTelefone());
-        txData.setText(ClienteB.getDataCad());
+        ModelCliente = ClienteC.controlePreencherCampos(Integer.parseInt(Modelo.getValueAt(tbCliente.getSelectedRow(), 0).toString()));
+        txCod.setText(ModelCliente.getCodigo()+"");
+        txNome.setText(ModelCliente.getNome());
+        txRua.setText(ModelCliente.getRua());
+        txBairro.setText(ModelCliente.getBairro());
+        txTelefone.setText(ModelCliente.getTelefone());
+        txData.setText(ModelCliente.getDataCad());
         habilitarCampos(true);
     }//GEN-LAST:event_tbClienteMousePressed
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
       popularClienteBeans();   
-      ClienteC.verificarDadosEditar(ClienteB);
+      ClienteC.verificarDadosEditar(ModelCliente);
       LimparCmapos();
       txBusca.setText("");
       habilitarCampos(false);
@@ -375,11 +375,11 @@ public class formCliente extends javax.swing.JInternalFrame {
   }
 
 final void popularClienteBeans(){
-    ClienteB.setNome(txNome.getText());
-    ClienteB.setRua(txRua.getText());
-    ClienteB.setBairro(txBairro.getText());
-    ClienteB.setTelefone(txTelefone.getText());
-    ClienteB.setDataCad(txData.getText());
+    ModelCliente.setNome(txNome.getText());
+    ModelCliente.setRua(txRua.getText());
+    ModelCliente.setBairro(txBairro.getText());
+    ModelCliente.setTelefone(txTelefone.getText());
+    ModelCliente.setDataCad(txData.getText());
 }
 
 final void LimparCmapos(){

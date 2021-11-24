@@ -1,7 +1,7 @@
 
 package Controller;
 
-import MODEL.ClienteBeans;
+import MODEL.ModelCliente;
 import DAO.DAOCliente;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -16,7 +16,7 @@ public class ControllerCliente {
        ClienteD = new DAOCliente(); 
     }
     
-    public boolean verificarDados(ClienteBeans Cliente){
+    public boolean verificarDados(ModelCliente Cliente){
         if(Cliente.getNome().equals("")){
           JOptionPane.showMessageDialog(null, "Preencha o campoNome", "Erro",0 ,new ImageIcon("Imagens/btn_sair.png"));
           return false;
@@ -46,11 +46,11 @@ public class ControllerCliente {
        ClienteD.buscarCliente(Pesquisa, Modelo);
     }
     
-    public ClienteBeans controlePreencherCampos(int Codigo){
+    public ModelCliente controlePreencherCampos(int Codigo){
         return ClienteD.PreencherCampos(Codigo);
     }
     
-    public boolean verificarDadosEditar(ClienteBeans Cliente){
+    public boolean verificarDadosEditar(ModelCliente Cliente){
         if(Cliente.getNome().equals("")){
           JOptionPane.showMessageDialog(null, "Preencha o campoNome", "Erro",0 ,new ImageIcon("Imagens/btn_sair.png"));
           return false;

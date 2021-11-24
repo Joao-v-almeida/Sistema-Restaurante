@@ -3,24 +3,23 @@ package VIEW;
 
 import Utilitarios.FundoTela;
 import javax.swing.JFrame;
-import java.awt.Frame;
 import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 
 
-public class FormPrincipal extends javax.swing.JFrame {
+public class FrmPrincipal extends javax.swing.JFrame {
 
-    FundoTela tela;
-    formCliente formcliente;
+    FundoTela FundoTela;
+    FrmCliente FrmCliente;
     formFuncionario formfuncionario;
-    FrmCardapio cardTela;
+    FrmCardapio FrmCardapio;
     
-    public FormPrincipal() {
+    public FrmPrincipal() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new GridLayout());
-        tela = new FundoTela("imagens/teste1.jpg");
-        getContentPane().add(tela);
+        FundoTela = new FundoTela("imagens/teste1.jpg");
+        getContentPane().add(FundoTela);
         
         menuCliente.setIcon(new ImageIcon("Imagens/Cliente.png"));
         menuFuncionario.setIcon(new ImageIcon("Imagens/funcionario.png"));
@@ -116,21 +115,21 @@ public class FormPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuClienteActionPerformed
-      formcliente = new formCliente();
-      tela.add(formcliente);
-      formcliente.setVisible(true);
+      FrmCliente = new FrmCliente();
+      FundoTela.add(FrmCliente);
+      FrmCliente.setVisible(true);
     }//GEN-LAST:event_menuClienteActionPerformed
 
     private void menuFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuFuncionarioActionPerformed
       formfuncionario = new formFuncionario();
-      tela.add(formfuncionario);
+      FundoTela.add(formfuncionario);
       formfuncionario.setVisible(true);
     }//GEN-LAST:event_menuFuncionarioActionPerformed
 
     private void menuCardapioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCardapioActionPerformed
-        cardTela = new FrmCardapio();
-        tela.add(cardTela);
-        cardTela.setVisible(true);
+        FrmCardapio = new FrmCardapio();
+        FundoTela.add(FrmCardapio);
+        FrmCardapio.setVisible(true);
     }//GEN-LAST:event_menuCardapioActionPerformed
 
    
@@ -144,20 +143,21 @@ public class FormPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormPrincipal().setVisible(true);
+                new FrmPrincipal().setVisible(true);
             }
         });
     }
