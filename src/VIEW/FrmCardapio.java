@@ -36,9 +36,9 @@ public class FrmCardapio extends javax.swing.JInternalFrame {
         txtBusca = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbItem = new javax.swing.JTable();
-        btNovo = new javax.swing.JButton();
-        btCadastrar = new javax.swing.JButton();
-        btEditar = new javax.swing.JButton();
+        btnNovo = new javax.swing.JButton();
+        btnCadastrar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         cbTipo = new javax.swing.JComboBox<>();
         txtValor = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
@@ -96,35 +96,35 @@ public class FrmCardapio extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tbItem);
 
-        btNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/adicionar.png"))); // NOI18N
-        btNovo.setContentAreaFilled(false);
-        btNovo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btNovo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btNovo.addActionListener(new java.awt.event.ActionListener() {
+        btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/adicionar.png"))); // NOI18N
+        btnNovo.setContentAreaFilled(false);
+        btnNovo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnNovo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btNovoActionPerformed(evt);
+                btnNovoActionPerformed(evt);
             }
         });
 
-        btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/salvar-arquivo.png"))); // NOI18N
-        btCadastrar.setContentAreaFilled(false);
-        btCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btCadastrar.setPreferredSize(new java.awt.Dimension(61, 23));
-        btCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/salvar-arquivo.png"))); // NOI18N
+        btnCadastrar.setContentAreaFilled(false);
+        btnCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadastrar.setPreferredSize(new java.awt.Dimension(61, 23));
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCadastrarActionPerformed(evt);
+                btnCadastrarActionPerformed(evt);
             }
         });
 
-        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/editar.png"))); // NOI18N
-        btEditar.setContentAreaFilled(false);
-        btEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btEditar.setPreferredSize(new java.awt.Dimension(61, 23));
-        btEditar.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/editar.png"))); // NOI18N
+        btnEditar.setContentAreaFilled(false);
+        btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEditar.setPreferredSize(new java.awt.Dimension(61, 23));
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btEditarActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
 
@@ -177,11 +177,11 @@ public class FrmCardapio extends javax.swing.JInternalFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(110, 110, 110)
-                .addComponent(btNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -216,16 +216,16 @@ public class FrmCardapio extends javax.swing.JInternalFrame {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setBounds(400, 50, 497, 441);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         popularCardapioBeans();
         boolean retorno = ControllerCardapio.verificarDados(ModelCardapio);
         if (retorno) {
@@ -234,7 +234,7 @@ public class FrmCardapio extends javax.swing.JInternalFrame {
         }
         //habilitarCampos(false);
         //LimparCampos();
-    }//GEN-LAST:event_btCadastrarActionPerformed
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void tbItemMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbItemMousePressed
         habilitarCampos(true);
@@ -243,28 +243,28 @@ public class FrmCardapio extends javax.swing.JInternalFrame {
         txtDescricao.setText(ModelCardapio.getDescricao());
         cbTipo.setSelectedItem(ModelCardapio.getTipo());
         txtValor.setText(ModelCardapio.getValor() + "");
-        btEditar.setEnabled(true);
+        btnEditar.setEnabled(true);
     }//GEN-LAST:event_tbItemMousePressed
 
-    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         popularCardapioBeans();
         ControllerCardapio.verificarDadosEditar(ModelCardapio);
         //LimparCampos();
         txtBusca.setText("");
         habilitarCampos(false);
         novoCadastro();
-    }//GEN-LAST:event_btEditarActionPerformed
+    }//GEN-LAST:event_btnEditarActionPerformed
 
-    private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
         habilitarCampos(true);
         ControllerCardapio.controleDeCodigo();
         txtCod.setText(ControllerCardapio.controleDeCodigo());
         txtValor.setText("0");
         txtDescricao.setText("");
         cbTipo.setSelectedIndex(0);
-        btCadastrar.setEnabled(true);
-        btEditar.setEnabled(false);
-    }//GEN-LAST:event_btNovoActionPerformed
+        btnCadastrar.setEnabled(true);
+        btnEditar.setEnabled(false);
+    }//GEN-LAST:event_btnNovoActionPerformed
 
     private void txtBuscaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscaKeyReleased
         Modelo.setNumRows(0);
@@ -273,9 +273,9 @@ public class FrmCardapio extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btCadastrar;
-    private javax.swing.JButton btEditar;
-    private javax.swing.JButton btNovo;
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnNovo;
     private javax.swing.JComboBox<String> cbTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -314,9 +314,9 @@ public class FrmCardapio extends javax.swing.JInternalFrame {
     }
 
     final void novoCadastro() {
-        btCadastrar.setEnabled(false);
-        btEditar.setEnabled(false);
-        btNovo.setEnabled(true);
+        btnCadastrar.setEnabled(false);
+        btnEditar.setEnabled(false);
+        btnNovo.setEnabled(true);
 
     }
 

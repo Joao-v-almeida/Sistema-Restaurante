@@ -10,16 +10,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
     FundoTela FundoTela;
     FrmCliente FrmCliente;
     FrmFuncionario FrmFuncionario;
+    FrmEntregador FrmEntregador;
     FrmCardapio FrmCardapio;
 
     public FrmPrincipal() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new GridLayout());
-        FundoTela = new FundoTela("imagens/teste1.jpg");
+        FundoTela = new FundoTela("imagens/pizza-fundo.jpg");
         getContentPane().add(FundoTela);
 
-        menuCliente.setIcon(new ImageIcon("Imagens/Cliente.png"));
+        menuCliente.setIcon(new ImageIcon("Imagens/Clientes.png"));
         menuFuncionario.setIcon(new ImageIcon("Imagens/funcionario.png"));
         menuCardapio.setIcon(new ImageIcon("Imagens/hamburger.png"));
         menuEntregador.setIcon(new ImageIcon("Imagens/transporte.png"));
@@ -27,7 +28,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCaixa.setIcon(new ImageIcon("Imagens/caixa.png"));
         menuRelatorio.setIcon(new ImageIcon("Imagens/relatorio.png"));
         menuSair.setIcon(new ImageIcon("Imagens/sair.png"));
-        menuPedido.setIcon(new ImageIcon("Imagens/pedido.png"));
 
         ImageIcon icone = new ImageIcon("Imagens/ico_cardapio.png");
         setIconImage(icone.getImage());
@@ -78,6 +78,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCadastro.add(menuCardapio);
 
         menuEntregador.setText("Entregador");
+        menuEntregador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuEntregadorActionPerformed(evt);
+            }
+        });
         menuCadastro.add(menuEntregador);
 
         jMenuBar1.add(menuCadastro);
@@ -122,6 +127,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FundoTela.add(FrmFuncionario);
         FrmFuncionario.setVisible(true);
     }//GEN-LAST:event_menuFuncionarioActionPerformed
+
+    private void menuEntregadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEntregadorActionPerformed
+        FrmEntregador = new FrmEntregador();
+        FundoTela.add(FrmEntregador);
+        FrmEntregador.setVisible(true);
+    }//GEN-LAST:event_menuEntregadorActionPerformed
 
     private void menuCardapioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCardapioActionPerformed
         FrmCardapio = new FrmCardapio();
