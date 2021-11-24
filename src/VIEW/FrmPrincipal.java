@@ -17,7 +17,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new GridLayout());
-        FundoTela = new FundoTela("imagens/pizza-fundo.jpg");
+        FundoTela = new FundoTela("imagens/fundoTela.jpg");
         getContentPane().add(FundoTela);
 
         menuCliente.setIcon(new ImageIcon("Imagens/Clientes.png"));
