@@ -1,6 +1,6 @@
 package DAO;
 
-import MODEL.CardapioBeans;
+import MODEL.ModelCardapio;
 import Utilitarios.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,14 +15,14 @@ public class DAOCardapio {
 
     }
 
-    public void cadastrarCardapio(CardapioBeans Card) {
+    public void cadastrarCardapio(ModelCardapio Cardapio) {
         try {
 
             String SQLInsertion = "INSERT INTO cardapio(car_descricao, car_tipo, car_valor) VALUES (?,?,?)";
             PreparedStatement st = Conexao.getConnection().prepareStatement(SQLInsertion);
-            st.setString(1, Card.getDescricao());
-            st.setString(2, Card.getTipo());
-            st.setDouble(3, Card.getValor());
+            st.setString(1, Cardapio.getDescricao());
+            st.setString(2, Cardapio.getTipo());
+            st.setDouble(3, Cardapio.getValor());
 
             st.execute();
             Conexao.getConnection().commit();
@@ -66,36 +66,36 @@ public class DAOCardapio {
 
     }
 
-    public CardapioBeans PreencherCampos(int Codigo) {
-        CardapioBeans Func = new CardapioBeans();
+    public ModelCardapio PreencherCampos(int Codigo) {
+        ModelCardapio Cardapio = new ModelCardapio();
         try {
             String SQLSelection = "SELECT * FROM cardapio WHERE car_cod = ?";
             PreparedStatement st = Conexao.getConnection().prepareStatement(SQLSelection);
             st.setInt(1, Codigo);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                Func.setCodigo(rs.getInt("car_cod"));
-                Func.setDescricao(rs.getString("car_descricao"));
-                Func.setTipo(rs.getString("car_tipo"));
-                Func.setValor(rs.getDouble("car_valor"));
+                Cardapio.setCodigo(rs.getInt("car_cod"));
+                Cardapio.setDescricao(rs.getString("car_descricao"));
+                Cardapio.setTipo(rs.getString("car_tipo"));
+                Cardapio.setValor(rs.getDouble("car_valor"));
             }
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao Buscar Cardápio", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
         }
 
-        return Func;
+        return Cardapio;
     }
 
-    public void editarCardapio(CardapioBeans Card) {
+    public void editarCardapio(ModelCardapio Cardapio) {
         try {
 
             String SQLInsertion = "UPDATE cardapio SET car_descricao = ?,  car_tipo = ?, car_valor = ? WHERE car_cod = ? ";
             PreparedStatement st = Conexao.getConnection().prepareStatement(SQLInsertion);
-            st.setString(1, Card.getDescricao());
-            st.setString(2, Card.getTipo());
-            st.setDouble(3, Card.getValor());
-            st.setInt(4, Card.getCodigo());
+            st.setString(1, Cardapio.getDescricao());
+            st.setString(2, Cardapio.getTipo());
+            st.setDouble(3, Cardapio.getValor());
+            st.setInt(4, Cardapio.getCodigo());
 
             st.execute();
             Conexao.getConnection().commit();

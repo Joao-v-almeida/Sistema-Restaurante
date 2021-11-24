@@ -13,7 +13,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     FundoTela tela;
     formCliente formcliente;
     formFuncionario formfuncionario;
-    CardapioTela cardTela;
+    FrmCardapio cardTela;
     
     public FormPrincipal() {
         initComponents();
@@ -128,7 +128,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuFuncionarioActionPerformed
 
     private void menuCardapioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCardapioActionPerformed
-        cardTela = new CardapioTela();
+        cardTela = new FrmCardapio();
         tela.add(cardTela);
         cardTela.setVisible(true);
     }//GEN-LAST:event_menuCardapioActionPerformed

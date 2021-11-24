@@ -1,28 +1,26 @@
 package VIEW;
 
-import MODEL.CardapioBeans;
+import MODEL.ModelCardapio;
 import Controller.ControllerCardapio;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.text.MaskFormatter;
 
-public class CardapioTela extends javax.swing.JInternalFrame {
-    
-    MaskFormatter FormatoTel;
-    CardapioBeans CardapioB;
-    ControllerCardapio CardC;
+public class FrmCardapio extends javax.swing.JInternalFrame {
+
+    ModelCardapio ModelCardapio;
+    ControllerCardapio ControllerCardapio;
     DefaultTableModel Modelo;
-    
-    public CardapioTela() {
+
+    public FrmCardapio() {
         initComponents();
         novoCadastro();
         habilitarCampos(false);
-        
-        CardapioB = new CardapioBeans();
-        CardC = new ControllerCardapio();
+
+        ModelCardapio = new ModelCardapio();
+        ControllerCardapio = new ControllerCardapio();
         Modelo = (DefaultTableModel) tbItem.getModel();
-        
+
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -229,7 +227,7 @@ public class CardapioTela extends javax.swing.JInternalFrame {
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
         popularCardapioBeans();
-        boolean retorno = CardC.verificarDados(CardapioB);
+        boolean retorno = ControllerCardapio.verificarDados(ModelCardapio);
         if (retorno) {
             LimparCampos();
             novoCadastro();
@@ -240,17 +238,17 @@ public class CardapioTela extends javax.swing.JInternalFrame {
 
     private void tbItemMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbItemMousePressed
         habilitarCampos(true);
-        CardapioB = CardC.controlePreencherCampos(Integer.parseInt(Modelo.getValueAt(tbItem.getSelectedRow(), 0).toString()));
-        txtCod.setText(CardapioB.getCodigo() + "");
-        txtDescricao.setText(CardapioB.getDescricao());
-        cbTipo.setSelectedItem(CardapioB.getTipo());
-        txtValor.setText(CardapioB.getValor() + "");
+        ModelCardapio = ControllerCardapio.controlePreencherCampos(Integer.parseInt(Modelo.getValueAt(tbItem.getSelectedRow(), 0).toString()));
+        txtCod.setText(ModelCardapio.getCodigo() + "");
+        txtDescricao.setText(ModelCardapio.getDescricao());
+        cbTipo.setSelectedItem(ModelCardapio.getTipo());
+        txtValor.setText(ModelCardapio.getValor() + "");
         btEditar.setEnabled(true);
     }//GEN-LAST:event_tbItemMousePressed
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
         popularCardapioBeans();
-        CardC.verificarDadosEditar(CardapioB);
+        ControllerCardapio.verificarDadosEditar(ModelCardapio);
         //LimparCampos();
         txtBusca.setText("");
         habilitarCampos(false);
@@ -259,8 +257,8 @@ public class CardapioTela extends javax.swing.JInternalFrame {
 
     private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
         habilitarCampos(true);
-        CardC.controleDeCodigo();
-        txtCod.setText(CardC.controleDeCodigo());
+        ControllerCardapio.controleDeCodigo();
+        txtCod.setText(ControllerCardapio.controleDeCodigo());
         txtValor.setText("0");
         txtDescricao.setText("");
         cbTipo.setSelectedIndex(0);
@@ -270,7 +268,7 @@ public class CardapioTela extends javax.swing.JInternalFrame {
 
     private void txtBuscaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscaKeyReleased
         Modelo.setNumRows(0);
-        CardC.controlePesquisa(txtBusca.getText(), Modelo);
+        ControllerCardapio.controlePesquisa(txtBusca.getText(), Modelo);
     }//GEN-LAST:event_txtBuscaKeyReleased
 
 
@@ -295,31 +293,31 @@ public class CardapioTela extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     final void habilitarCampos(boolean valor) {
-        
+
         txtDescricao.setEnabled(valor);
         cbTipo.setEnabled(valor);
         txtValor.setEnabled(valor);
-        
+
     }
-    
+
     final void popularCardapioBeans() {
-        CardapioB.setDescricao(txtDescricao.getText());
-        CardapioB.setTipo(cbTipo.getSelectedItem().toString());
-        CardapioB.setValor(Double.parseDouble(txtValor.getText()));
+        ModelCardapio.setDescricao(txtDescricao.getText());
+        ModelCardapio.setTipo(cbTipo.getSelectedItem().toString());
+        ModelCardapio.setValor(Double.parseDouble(txtValor.getText()));
     }
-    
+
     final void LimparCampos() {
         txtCod.setText("");
         txtDescricao.setText("");
         txtValor.setText("");
         cbTipo.setSelectedIndex(0);
     }
-    
+
     final void novoCadastro() {
         btCadastrar.setEnabled(false);
         btEditar.setEnabled(false);
         btNovo.setEnabled(true);
-        
+
     }
-    
+
 }

@@ -1,13 +1,13 @@
 package MODEL;
 
-public class CardapioBeans {
+public class ModelCardapio {
 
     private Integer codigo;
     private String descricao;
     private String tipo;
     private Double valor;
 
-    public CardapioBeans() {
+    public ModelCardapio() {
 
     }
 
