@@ -6,20 +6,21 @@ import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 
 public class FrmPrincipal extends javax.swing.JFrame {
-
+    
     FundoTela FundoTela;
     FrmCliente FrmCliente;
     FrmFuncionario FrmFuncionario;
     FrmEntregador FrmEntregador;
     FrmCardapio FrmCardapio;
-
+    FrmPedido FrmPedido;
+    
     public FrmPrincipal() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new GridLayout());
         FundoTela = new FundoTela("imagens/fundoTela.jpg");
         getContentPane().add(FundoTela);
-
+        
         menuCliente.setIcon(new ImageIcon("Imagens/Cliente.png"));
         menuPedido.setIcon(new ImageIcon("Imagens/pedido.png"));
         menuFuncionario.setIcon(new ImageIcon("Imagens/funcionario.png"));
@@ -29,11 +30,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCaixa.setIcon(new ImageIcon("Imagens/caixa.png"));
         menuRelatorio.setIcon(new ImageIcon("Imagens/relatorio.png"));
         menuSair.setIcon(new ImageIcon("Imagens/sair.png"));
-
+        
         ImageIcon icone = new ImageIcon("Imagens/sistema.png");
         setIconImage(icone.getImage());
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -91,6 +92,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCaixa.setText("Caixa");
 
         menuPedido.setText("Pedido");
+        menuPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPedidoActionPerformed(evt);
+            }
+        });
         menuCaixa.add(menuPedido);
 
         jMenuBar1.add(menuCaixa);
@@ -141,8 +147,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmCardapio.setVisible(true);
     }//GEN-LAST:event_menuCardapioActionPerformed
 
+    private void menuPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPedidoActionPerformed
+        FrmPedido = new FrmPedido();
+        FundoTela.add(FrmPedido);
+        FrmPedido.setVisible(true);
+    }//GEN-LAST:event_menuPedidoActionPerformed
+    
     public static void main(String args[]) {
-
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

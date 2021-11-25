@@ -3,6 +3,7 @@ package Controller;
 
 import MODEL.ModelCliente;
 import DAO.DAOCliente;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -44,6 +45,10 @@ public class ControllerCliente {
     
     public void controlePesquisa(String Pesquisa, DefaultTableModel Modelo ){
        ClienteD.buscarCliente(Pesquisa, Modelo);
+    }
+    
+    public void controlePesquisa(String Pesquisa, List<String> Lista ){
+       ClienteD.buscarCliente(Pesquisa, Lista);
     }
     
     public ModelCliente controlePreencherCampos(int Codigo){
