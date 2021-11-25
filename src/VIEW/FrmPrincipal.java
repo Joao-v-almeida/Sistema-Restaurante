@@ -6,7 +6,6 @@ import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 
 public class FrmPrincipal extends javax.swing.JFrame {
-    //TESTE COMENTARIO
     FundoTela FundoTela;
     FrmCliente FrmCliente;
     FrmFuncionario FrmFuncionario;
