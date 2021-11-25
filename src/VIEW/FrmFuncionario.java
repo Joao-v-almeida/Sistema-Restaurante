@@ -18,6 +18,7 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
 
     public FrmFuncionario() {
         initComponents();
+        novoCadastro();
         habilitarCampos(false);
 
         FormatoData = new SimpleDateFormat("dd/MM/yyyy");
@@ -43,9 +44,9 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbFuncionario = new javax.swing.JTable();
         jSeparator2 = new javax.swing.JSeparator();
-        btNovo = new javax.swing.JButton();
-        btCadastrar = new javax.swing.JButton();
-        btEditar = new javax.swing.JButton();
+        btnNovo = new javax.swing.JButton();
+        btnCadastrar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         cbCargo = new javax.swing.JComboBox<>();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jLabel4 = new javax.swing.JLabel();
@@ -121,35 +122,35 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tbFuncionario);
 
-        btNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/adicionar.png"))); // NOI18N
-        btNovo.setContentAreaFilled(false);
-        btNovo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btNovo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btNovo.addActionListener(new java.awt.event.ActionListener() {
+        btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/adicionar.png"))); // NOI18N
+        btnNovo.setContentAreaFilled(false);
+        btnNovo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnNovo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btNovoActionPerformed(evt);
+                btnNovoActionPerformed(evt);
             }
         });
 
-        btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/salvar.png"))); // NOI18N
-        btCadastrar.setContentAreaFilled(false);
-        btCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btCadastrar.setPreferredSize(new java.awt.Dimension(61, 23));
-        btCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/salvar.png"))); // NOI18N
+        btnCadastrar.setContentAreaFilled(false);
+        btnCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadastrar.setPreferredSize(new java.awt.Dimension(61, 23));
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCadastrarActionPerformed(evt);
+                btnCadastrarActionPerformed(evt);
             }
         });
 
-        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/editar.png"))); // NOI18N
-        btEditar.setContentAreaFilled(false);
-        btEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btEditar.setPreferredSize(new java.awt.Dimension(61, 23));
-        btEditar.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/editar.png"))); // NOI18N
+        btnEditar.setContentAreaFilled(false);
+        btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEditar.setPreferredSize(new java.awt.Dimension(61, 23));
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btEditarActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
 
@@ -361,11 +362,11 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
                             .addComponent(txData))
                         .addGap(15, 15, 15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
-                        .addComponent(btCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(13, 13, 13)
-                        .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(129, 129, 129))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -403,9 +404,9 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -422,19 +423,22 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
         setBounds(400, 70, 520, 510);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
         DataAtual = new Date();
         txData.setText(FormatoData.format(DataAtual));
         habilitarCampos(true);
         ControllerFuncionario.controleDeCodigo();
         txtCod.setText(ControllerFuncionario.controleDeCodigo());
-    }//GEN-LAST:event_btNovoActionPerformed
+        btnCadastrar.setEnabled(true);
+        btnEditar.setEnabled(false);
+    }//GEN-LAST:event_btnNovoActionPerformed
 
-    private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         popularFuncionarioBeans();
         ControllerFuncionario.verificarDados(ModelFuncionario);
-        LimparCmapos();
-    }//GEN-LAST:event_btCadastrarActionPerformed
+        novoCadastro();
+        
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void txtBuscaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscaKeyReleased
         Modelo.setNumRows(0);
@@ -448,15 +452,18 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
         cbCargo.setSelectedItem(ModelFuncionario.getCargo());
         txData.setText(ModelFuncionario.getDataCad());
         habilitarCampos(true);
+        btnEditar.setEnabled(true);
+        
     }//GEN-LAST:event_tbFuncionarioMousePressed
 
-    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         popularFuncionarioBeans();
         ControllerFuncionario.verificarDadosEditar(ModelFuncionario);
-        LimparCmapos();
+        //LimparCmapos();
         txtBusca.setText("");
         habilitarCampos(false);
-    }//GEN-LAST:event_btEditarActionPerformed
+        novoCadastro();
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     private void txtBusca1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusca1KeyReleased
         // TODO add your handling code here:
@@ -480,12 +487,12 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btCadastrar1;
-    private javax.swing.JButton btEditar;
     private javax.swing.JButton btEditar1;
-    private javax.swing.JButton btNovo;
     private javax.swing.JButton btNovo1;
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnNovo;
     private javax.swing.JComboBox<String> cbCargo;
     private javax.swing.JComboBox<String> cbCargo1;
     private javax.swing.JInternalFrame jInternalFrame1;
@@ -536,5 +543,10 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
         cbCargo.setSelectedIndex(0);
         txData.setText("");
     }
+     final void novoCadastro() {
+        btnCadastrar.setEnabled(false);
+        btnEditar.setEnabled(false);
+        btnNovo.setEnabled(true);
 
+    }
 }

@@ -19,7 +19,7 @@ public class DAOFuncionario {
     public void cadastrarFuncionario(ModelFuncionario Funcionario) {
         try {
 
-            String SQLInsertion = "INSERT INTO funcionarios(fun_nome, fun_cargo,fun_data_cad) VALUES (?,?,?)";
+            String SQLInsertion = "INSERT INTO funcionarios(fun_nome, fun_cargo,fun_date_cad) VALUES (?,?,?)";
             PreparedStatement st = Conexao.getConnection().prepareStatement(SQLInsertion);
             st.setString(1, Funcionario.getNome());
             st.setString(2, Funcionario.getCargo());
@@ -60,7 +60,7 @@ public class DAOFuncionario {
             PreparedStatement st = Conexao.getConnection().prepareStatement(SQLSelection);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                Modelo.addRow(new Object[]{rs.getString("fun_cod"), rs.getString("fun_nome"), rs.getString("fun_cargo"), Corretores.ConverterParaJava(rs.getString("fun_data_cad"))});
+                Modelo.addRow(new Object[]{rs.getString("fun_cod"), rs.getString("fun_nome"), rs.getString("fun_cargo"), Corretores.ConverterParaJava(rs.getString("fun_date_cad"))});
             }
 
         } catch (SQLException ex) {
@@ -80,7 +80,7 @@ public class DAOFuncionario {
                 Func.setCodigo(rs.getInt("fun_cod"));
                 Func.setNome(rs.getString("fun_nome"));
                 Func.setCargo(rs.getString("fun_cargo"));
-                Func.setDataCad(Corretores.ConverterParaJava(rs.getString("fun_data_cad")));
+                Func.setDataCad(Corretores.ConverterParaJava(rs.getString("fun_date_cad")));
             }
 
         } catch (SQLException ex) {
