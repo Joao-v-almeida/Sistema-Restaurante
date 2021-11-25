@@ -1,6 +1,7 @@
 package VIEW;
 
 import Controller.ControllerCliente;
+import MODEL.ModelCliente;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFormattedTextField;
@@ -18,6 +19,8 @@ public class FrmPedido extends javax.swing.JInternalFrame {
         initComponents();
         habilitarCampos(false);
         Lista = new ArrayList<>();
+        ControllerCliente = new ControllerCliente();
+        ModelCliente = new ModelCliente();
     }
 
     @SuppressWarnings("unchecked")
@@ -380,7 +383,13 @@ public class FrmPedido extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnFecharClienteActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        cbClientes.removeAllItems();
+        Lista.clear();
         String Pesquisa = JOptionPane.showInputDialog(null, "Digite o nome do Cliente", "Pesquisar", 3);
+        ControllerCliente.controlePesquisa(Pesquisa, Lista);
+        Lista.forEach((i) -> {
+            cbClientes.addItem(i);
+        });
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
 
