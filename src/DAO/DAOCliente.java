@@ -22,7 +22,7 @@ public class DAOCliente {
    
    public void cadastrarCliente(ModelCliente Cliente){
        try {
-           String SQLInsertion = "insert into clientes(cli_nome, cli_rua, cli_bairro, cli_telefone, cli_data_cad) values(?,?,?,?,?)";
+           String SQLInsertion = "INSERT INTO clientes(cli_nome, cli_rua, cli_bairro, cli_telefone, cli_data_cad) VALUES (?,?,?,?,?)";
            PreparedStatement st = Conexao.getConnection().prepareStatement(SQLInsertion);
            st.setString(1, Cliente.getNome());
            st.setString(2, Cliente.getRua());

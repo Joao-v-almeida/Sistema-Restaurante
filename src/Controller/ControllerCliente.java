@@ -10,10 +10,10 @@ import javax.swing.table.DefaultTableModel;
 
 public class ControllerCliente {
     
-    DAOCliente ClienteD;
+    DAOCliente DAOCliente;
     
     public ControllerCliente(){
-       ClienteD = new DAOCliente(); 
+       DAOCliente = new DAOCliente(); 
     }
     
     public boolean verificarDados(ModelCliente Cliente){
@@ -34,20 +34,20 @@ public class ControllerCliente {
           JOptionPane.showMessageDialog(null, "Preencha o campoTelefone", "Erro",0 ,new ImageIcon("Imagens/erro.png"));
           return false;
         }
-        ClienteD.cadastrarCliente(Cliente);
+        DAOCliente.cadastrarCliente(Cliente);
         return true;
     }
     
     public String controleDeCodigo(){
-        return ClienteD.proximoCliente();
+        return DAOCliente.proximoCliente();
     }
     
     public void controlePesquisa(String Pesquisa, DefaultTableModel Modelo ){
-       ClienteD.buscarCliente(Pesquisa, Modelo);
+       DAOCliente.buscarCliente(Pesquisa, Modelo);
     }
     
     public ModelCliente controlePreencherCampos(int Codigo){
-        return ClienteD.PreencherCampos(Codigo);
+        return DAOCliente.PreencherCampos(Codigo);
     }
     
     public boolean verificarDadosEditar(ModelCliente Cliente){
@@ -68,7 +68,7 @@ public class ControllerCliente {
           JOptionPane.showMessageDialog(null, "Preencha o campo Telefone", "Erro",0 ,new ImageIcon("Imagens/erro.png"));
           return false;
         }
-        ClienteD.editarCliente(Cliente);
+        DAOCliente.editarCliente(Cliente);
         return true;
     }
 }

@@ -18,5 +18,4 @@ public void paintComponent(Graphics g){
     g.drawImage(imagem, 0, 0, getWidth(), getHeight(), this);
     
 }
-///teste 
 }
