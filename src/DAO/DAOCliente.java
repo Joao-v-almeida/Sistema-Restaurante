@@ -36,36 +36,36 @@ public class DAOCliente {
         }
     }
 
-    public String proximoCliente(){
-           String SQLSelection = "SELECT * FROM clientes ORDER BY cli_cod DESC LIMIT 1";
-       try {
-           PreparedStatement st = Conexao.getConnection().prepareStatement(SQLSelection);
-           ResultSet rs = st.executeQuery();
-           if(rs.next()){
-               return (Integer.parseInt(rs.getString("cli_cod")) + 1) + "";
-           }else{
-               return "1";
-           }
-       } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "Erro ao Buscar Registro", "Erro",0 ,new ImageIcon("Imagens/btn_sair.png"));
-           return "0";
-                }
+    public String proximoCliente() {
+        String SQLSelection = "SELECT * FROM clientes ORDER BY cli_cod DESC LIMIT 1";
+        try {
+            PreparedStatement st = Conexao.getConnection().prepareStatement(SQLSelection);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                return (Integer.parseInt(rs.getString("cli_cod")) + 1) + "";
+            } else {
+                return "1";
             }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao Buscar Registro", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            return "0";
+        }
+    }
 
-      public void buscarCliente(String Pesquisa, DefaultTableModel Modelo){
-              
-       try {
-           String SQLSelection = "SELECT * FROM clientes WHERE cli_nome like '%" + Pesquisa + "%' ";
-           PreparedStatement st = Conexao.getConnection().prepareStatement(SQLSelection);
-           ResultSet rs = st.executeQuery();
-           while(rs.next()){
-                Modelo.addRow(new Object [] {rs.getString("cli_cod"), rs.getString("cli_nome"), rs.getString("cli_rua"), rs.getString("cli_bairro"), rs.getString("cli_telefone")} );
-           }
-       } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "Erro ao Buscar Cliente", "Erro",0 ,new ImageIcon("Imagens/btn_sair.png"));
-       }
-                
+    public void buscarCliente(String Pesquisa, DefaultTableModel Modelo) {
+
+        try {
+            String SQLSelection = "SELECT * FROM clientes WHERE cli_nome like '%" + Pesquisa + "%' ";
+            PreparedStatement st = Conexao.getConnection().prepareStatement(SQLSelection);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Modelo.addRow(new Object[]{rs.getString("cli_cod"), rs.getString("cli_nome"), rs.getString("cli_rua"), rs.getString("cli_bairro"), rs.getString("cli_telefone")});
             }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao Buscar Cliente", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+        }
+
+    }
 
     public void buscarCliente(String Pesquisa, List<String> Lista) {
 
