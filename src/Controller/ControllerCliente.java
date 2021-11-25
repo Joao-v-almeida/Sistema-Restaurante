@@ -7,27 +7,30 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
 public class ControllerCliente {
 
     DAOCliente DAOCliente;
 
+    public ControllerCliente() {
+        DAOCliente = new DAOCliente();
+    }
+
     public boolean verificarDados(ModelCliente Cliente) {
         if (Cliente.getNome().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoNome", "Erro", 0, new ImageIcon("Imagens/erro.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoNome", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
 
         if (Cliente.getRua().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoRua", "Erro", 0, new ImageIcon("Imagens/erro.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoRua", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
         if (Cliente.getBairro().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoBairro", "Erro", 0, new ImageIcon("Imagens/erro.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoBairro", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
         if (Cliente.getTelefone().equals("  )      -    ")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoTelefone", "Erro", 0, new ImageIcon("Imagens/erro.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoTelefone", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
         DAOCliente.cadastrarCliente(Cliente);
@@ -41,8 +44,8 @@ public class ControllerCliente {
     public void controlePesquisa(String Pesquisa, DefaultTableModel Modelo) {
         DAOCliente.buscarCliente(Pesquisa, Modelo);
     }
-    
-     public void controlePesquisa(String Pesquisa, List<String> Lista) {
+
+    public void controlePesquisa(String Pesquisa, List<String> Lista) {
         DAOCliente.buscarCliente(Pesquisa, Lista);
     }
 
@@ -52,20 +55,20 @@ public class ControllerCliente {
 
     public boolean verificarDadosEditar(ModelCliente Cliente) {
         if (Cliente.getNome().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/erro.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoNome", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
 
         if (Cliente.getRua().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo Rua", "Erro", 0, new ImageIcon("Imagens/erro.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoRua", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
         if (Cliente.getBairro().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo Bairro", "Erro", 0, new ImageIcon("Imagens/erro.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoBairro", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
         if (Cliente.getTelefone().equals("  )      -    ")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo Telefone", "Erro", 0, new ImageIcon("Imagens/erro.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoTelefone", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
             return false;
         }
         DAOCliente.editarCliente(Cliente);
