@@ -149,7 +149,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void menuPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPedidoActionPerformed
         FrmPedido = new FrmPedido();
         FundoTela.add(FrmPedido);
-        FrmPedido.setEnabled(true);
+        FrmPedido.setVisible(true);
     }//GEN-LAST:event_menuPedidoActionPerformed
 
     public static void main(String args[]) {

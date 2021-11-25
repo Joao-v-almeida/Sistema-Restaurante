@@ -1,17 +1,13 @@
-
 package VIEW;
-
 
 import MODEL.ModelCliente;
 import Controller.ControllerCliente;
-import DAO.DAOCliente;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
-
 
 public class FrmCliente extends javax.swing.JInternalFrame {
 
@@ -21,27 +17,19 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     ModelCliente ModelCliente;
     ControllerCliente ControllerCliente;
     DefaultTableModel Modelo;
-    
-    
+
     public FrmCliente() {
         initComponents();
         novoCadastro();
-        //txCod.setEnabled(false);
         habilitarCampos(false);
-        
+
         FormatoData = new SimpleDateFormat("dd/MM/yyyy");
-        
-        
         ModelCliente = new ModelCliente();
         ControllerCliente = new ControllerCliente();
-        
-        
-        Modelo = (DefaultTableModel)tbCliente.getModel();
-        
-        
+        Modelo = (DefaultTableModel) tbCliente.getModel();
+
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -84,11 +72,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         jLabel1.setText("Código");
 
         txtCod.setEditable(false);
-        txtCod.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodActionPerformed(evt);
-            }
-        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Nome");
@@ -98,12 +81,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Bairro");
-
-        txtBairro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBairroActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Telefone");
@@ -116,11 +93,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Buscar");
 
-        txtBusca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscaActionPerformed(evt);
-            }
-        });
         txtBusca.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscaKeyReleased(evt);
@@ -144,9 +116,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
             }
         });
         tbCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbClienteMouseClicked(evt);
-            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 tbClienteMousePressed(evt);
             }
@@ -283,46 +252,31 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         setBounds(400, 70, 520, 510);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBairroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBairroActionPerformed
-
-    private void txtCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodActionPerformed
-
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-       habilitarCampos(true);
-       ControllerCliente.controleDeCodigo();
-       txtCod.setText(ControllerCliente.controleDeCodigo());
-       DataAtual = new Date();
-       txtData.setText(FormatoData.format(DataAtual));
-       btnCadastrar.setEnabled(true);
-       btnEditar.setEnabled(false);
+        habilitarCampos(true);
+        ControllerCliente.controleDeCodigo();
+        txtCod.setText(ControllerCliente.controleDeCodigo());
+        DataAtual = new Date();
+        txtData.setText(FormatoData.format(DataAtual));
+        btnCadastrar.setEnabled(true);
+        btnEditar.setEnabled(false);
     }//GEN-LAST:event_btnNovoActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-      popularClienteBeans();   
-      ControllerCliente.verificarDados(ModelCliente);
-      novoCadastro();
+        popularClienteBeans();
+        ControllerCliente.verificarDados(ModelCliente);
+        novoCadastro();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    private void txtBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscaActionPerformed
-
     private void txtBuscaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscaKeyReleased
+
         Modelo.setNumRows(0);
         ControllerCliente.controlePesquisa(txtBusca.getText(), Modelo);
     }//GEN-LAST:event_txtBuscaKeyReleased
 
-    private void tbClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClienteMouseClicked
-        
-    }//GEN-LAST:event_tbClienteMouseClicked
-
     private void tbClienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClienteMousePressed
         ModelCliente = ControllerCliente.controlePreencherCampos(Integer.parseInt(Modelo.getValueAt(tbCliente.getSelectedRow(), 0).toString()));
-        txtCod.setText(ModelCliente.getCodigo()+"");
+        txtCod.setText(ModelCliente.getCodigo() + "");
         txtNome.setText(ModelCliente.getNome());
         txtRua.setText(ModelCliente.getRua());
         txtBairro.setText(ModelCliente.getBairro());
@@ -333,12 +287,12 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tbClienteMousePressed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-      popularClienteBeans();   
-      ControllerCliente.verificarDadosEditar(ModelCliente);
-      LimparCmapos();
-      txtBusca.setText("");
-      habilitarCampos(false);
-      novoCadastro();
+        popularClienteBeans();
+        ControllerCliente.verificarDadosEditar(ModelCliente);
+        LimparCampos();
+        txtBusca.setText("");
+        habilitarCampos(false);
+        novoCadastro();
     }//GEN-LAST:event_btnEditarActionPerformed
 
 
@@ -366,33 +320,33 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 
-    
-  final void habilitarCampos(boolean valor){
-      txtBairro.setEnabled(valor);
-      txtRua.setEnabled(valor);
-      txtNome.setEnabled(valor);
-      txtTelefone.setEnabled(valor);
-      txtData.setEnabled(valor);
-      
-  }
+    final void habilitarCampos(boolean valor) {
+        txtBairro.setEnabled(valor);
+        txtRua.setEnabled(valor);
+        txtNome.setEnabled(valor);
+        txtTelefone.setEnabled(valor);
+        txtData.setEnabled(valor);
 
-final void popularClienteBeans(){
-    ModelCliente.setNome(txtNome.getText());
-    ModelCliente.setRua(txtRua.getText());
-    ModelCliente.setBairro(txtBairro.getText());
-    ModelCliente.setTelefone(txtTelefone.getText());
-    ModelCliente.setDataCad(txtData.getText());
-}
+    }
 
-final void LimparCmapos(){
-    txtCod.setText("");
-    txtNome.setText("");
-    txtRua.setText("");
-    txtBairro.setText("");
-    txtTelefone.setText("");
-    txtData.setText("");
-}
-final void novoCadastro() {
+    final void popularClienteBeans() {
+        ModelCliente.setNome(txtNome.getText());
+        ModelCliente.setRua(txtRua.getText());
+        ModelCliente.setBairro(txtBairro.getText());
+        ModelCliente.setTelefone(txtTelefone.getText());
+        ModelCliente.setDataCad(txtData.getText());
+    }
+
+    final void LimparCampos() {
+        txtCod.setText("");
+        txtNome.setText("");
+        txtRua.setText("");
+        txtBairro.setText("");
+        txtTelefone.setText("");
+        txtData.setText("");
+    }
+
+    final void novoCadastro() {
         btnCadastrar.setEnabled(false);
         btnEditar.setEnabled(false);
         btnNovo.setEnabled(true);
