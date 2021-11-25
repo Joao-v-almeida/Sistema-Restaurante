@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+
 public class ControllerCliente {
 
     DAOCliente DAOCliente;

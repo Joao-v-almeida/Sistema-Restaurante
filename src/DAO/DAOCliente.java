@@ -67,7 +67,7 @@ public class DAOCliente {
 
     }
 
-    public void buscarCliente(String Pesquisa, List<String> Lista) {
+   public void buscarCliente(String Pesquisa, List<String> Lista) {
 
         try {
             String SQLSelection = "SELECT * FROM clientes WHERE cli_nome like '%" + Pesquisa + "%' ";
