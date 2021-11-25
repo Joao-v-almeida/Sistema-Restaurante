@@ -11,6 +11,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     FrmFuncionario FrmFuncionario;
     FrmEntregador FrmEntregador;
     FrmCardapio FrmCardapio;
+    FrmPedido FrmPedido;
 
     public FrmPrincipal() {
         initComponents();
@@ -90,6 +91,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCaixa.setText("Caixa");
 
         menuPedido.setText("Pedido");
+        menuPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPedidoActionPerformed(evt);
+            }
+        });
         menuCaixa.add(menuPedido);
 
         jMenuBar1.add(menuCaixa);
@@ -139,6 +145,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FundoTela.add(FrmCardapio);
         FrmCardapio.setVisible(true);
     }//GEN-LAST:event_menuCardapioActionPerformed
+
+    private void menuPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPedidoActionPerformed
+        FrmPedido = new FrmPedido();
+        FundoTela.add(FrmPedido);
+        FrmPedido.setEnabled(true);
+    }//GEN-LAST:event_menuPedidoActionPerformed
 
     public static void main(String args[]) {
 
