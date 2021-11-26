@@ -29,6 +29,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCaixa.setIcon(new ImageIcon("Imagens/caixa.png"));
         menuRelatorio.setIcon(new ImageIcon("Imagens/relatorio.png"));
         menuSair.setIcon(new ImageIcon("Imagens/sair.png"));
+        menuSaindo.setIcon(new ImageIcon("Imagens/sair2.png"));
 
         ImageIcon icone = new ImageIcon("Imagens/sistema.png");
         setIconImage(icone.getImage());
@@ -48,11 +49,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuPedido = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
         menuSair = new javax.swing.JMenu();
+        menuSaindo = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Restaurante");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
         menuCadastro.setText("Cadastro");
+        menuCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         menuCliente.setText("Clientes");
         menuCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -93,6 +98,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menuCadastro);
 
         menuCaixa.setText("Caixa");
+        menuCaixa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         menuPedido.setText("Pedido");
         menuPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -106,9 +112,25 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menuCaixa);
 
         menuRelatorio.setText("Relatórios");
+        menuRelatorio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuBar1.add(menuRelatorio);
 
         menuSair.setText("Sair");
+        menuSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuSairActionPerformed(evt);
+            }
+        });
+
+        menuSaindo.setText("Sair");
+        menuSaindo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuSaindoActionPerformed(evt);
+            }
+        });
+        menuSair.add(menuSaindo);
+
         jMenuBar1.add(menuSair);
 
         setJMenuBar(jMenuBar1);
@@ -157,6 +179,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmPedido.setVisible(true);
     }//GEN-LAST:event_menuPedidoActionPerformed
 
+    private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
+        dispose();
+    }//GEN-LAST:event_menuSairActionPerformed
+
+    private void menuSaindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSaindoActionPerformed
+        dispose();
+    }//GEN-LAST:event_menuSaindoActionPerformed
+
     public static void main(String args[]) {
 
         try {
@@ -195,6 +225,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuFuncionario;
     private javax.swing.JMenuItem menuPedido;
     private javax.swing.JMenu menuRelatorio;
+    private javax.swing.JMenuItem menuSaindo;
     private javax.swing.JMenu menuSair;
     // End of variables declaration//GEN-END:variables
 }
