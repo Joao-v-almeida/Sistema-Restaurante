@@ -260,18 +260,28 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         txtData.setText(FormatoData.format(DataAtual));
         btnCadastrar.setEnabled(true);
         btnEditar.setEnabled(false);
+        txtNome.setText("");
+        txtRua.setText("");
+        txtBairro.setText("");
+        txtTelefone.setText("");
+        
     }//GEN-LAST:event_btnNovoActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         popularClienteBeans();
-        ControllerCliente.verificarDados(ModelCliente);
-        novoCadastro();
+        boolean retorno = ControllerCliente.verificarDados(ModelCliente);
+        if (retorno) {
+            LimparCampos();
+            novoCadastro();
+        }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void txtBuscaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscaKeyReleased
 
         Modelo.setNumRows(0);
         ControllerCliente.controlePesquisa(txtBusca.getText(), Modelo);
+        btnNovo.setEnabled(true);
+        btnCadastrar.setEnabled(false);
     }//GEN-LAST:event_txtBuscaKeyReleased
 
     private void tbClienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClienteMousePressed
@@ -289,7 +299,6 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         popularClienteBeans();
         ControllerCliente.verificarDadosEditar(ModelCliente);
-        LimparCampos();
         txtBusca.setText("");
         habilitarCampos(false);
         novoCadastro();
