@@ -19,7 +19,7 @@ public class DAOEntregador {
     public void cadastrarEntregador(ModelEntregador Entregador) {
         try {
 
-            String SQLInsertion = "INSET INTO entregador(ent_nome, ent_status, ent_data_cad) VALUES (?,?,?)";
+            String SQLInsertion = "INSERT INTO entregador(ent_nome, ent_status, ent_data_cad) VALUES (?,?,?)";
             PreparedStatement st = Conexao.getConnection().prepareStatement(SQLInsertion);
             st.setString(1, Entregador.getNome());
             st.setString(2, "Livre");
