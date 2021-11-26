@@ -115,11 +115,6 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        tbFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                tbFuncionarioMousePressed(evt);
-            }
-        });
         jScrollPane1.setViewportView(tbFuncionario);
 
         btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/adicionar.png"))); // NOI18N
@@ -444,17 +439,6 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
         Modelo.setNumRows(0);
         ControllerFuncionario.controlePesquisa(txtBusca.getText(), Modelo);
     }//GEN-LAST:event_txtBuscaKeyReleased
-
-    private void tbFuncionarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbFuncionarioMousePressed
-        ModelFuncionario = ControllerFuncionario.controlePreencherCampos(Integer.parseInt(Modelo.getValueAt(tbFuncionario.getSelectedRow(), 0).toString()));
-        txtCod.setText(ModelFuncionario.getCodigo() + "");
-        txtNome.setText(ModelFuncionario.getNome());
-        cbCargo.setSelectedItem(ModelFuncionario.getCargo());
-        txData.setText(ModelFuncionario.getDataCad());
-        habilitarCampos(true);
-        btnEditar.setEnabled(true);
-        
-    }//GEN-LAST:event_tbFuncionarioMousePressed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         popularFuncionarioBeans();

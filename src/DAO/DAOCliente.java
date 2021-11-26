@@ -61,6 +61,7 @@ public class DAOCliente {
             while (rs.next()) {
                 Modelo.addRow(new Object[]{rs.getString("cli_cod"), rs.getString("cli_nome"), rs.getString("cli_rua"), rs.getString("cli_bairro"), rs.getString("cli_telefone")});
             }
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao Buscar Cliente", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
         }
@@ -74,8 +75,10 @@ public class DAOCliente {
             PreparedStatement st = Conexao.getConnection().prepareStatement(SQLSelection);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                Lista.add(rs.getString("cli_cod") + " - " + rs.getString("cli_nome"));
+                Lista.add(rs.getString("cli_cod") + " - " + rs.getString("cli_nome") + " - " + rs.getString("cli_telefone"));
             }
+            
+     
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao Buscar Cliente", "Erro", 0, new ImageIcon("Imagens/erro.png"));
         }

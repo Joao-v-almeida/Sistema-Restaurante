@@ -55,6 +55,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCadastro.setText("Cadastro");
 
         menuCliente.setText("Clientes");
+        menuCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuClienteActionPerformed(evt);
@@ -63,6 +64,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCadastro.add(menuCliente);
 
         menuFuncionario.setText("Funcionários");
+        menuFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuFuncionarioActionPerformed(evt);
@@ -71,6 +73,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCadastro.add(menuFuncionario);
 
         menuCardapio.setText("Cardápio");
+        menuCardapio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuCardapio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuCardapioActionPerformed(evt);
@@ -79,6 +82,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCadastro.add(menuCardapio);
 
         menuEntregador.setText("Entregador");
+        menuEntregador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuEntregador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuEntregadorActionPerformed(evt);
@@ -91,6 +95,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCaixa.setText("Caixa");
 
         menuPedido.setText("Pedido");
+        menuPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuPedidoActionPerformed(evt);
@@ -147,7 +152,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuCardapioActionPerformed
 
     private void menuPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPedidoActionPerformed
-        FrmPedido = new FrmPedido();
+        FrmPedido = new FrmPedido(1);
         FundoTela.add(FrmPedido);
         FrmPedido.setVisible(true);
     }//GEN-LAST:event_menuPedidoActionPerformed
