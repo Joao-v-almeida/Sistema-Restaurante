@@ -54,7 +54,7 @@ public class DAOEntregador {
     public void buscarEntregador(String Pesquisa, DefaultTableModel Modelo) {
 
         try {
-            String SQLSelection = "SELECT * FROM entregador WHERE fun_nome LIKE '%" + Pesquisa + "%' ";
+            String SQLSelection = "SELECT * FROM entregador WHERE ent_nome LIKE '%" + Pesquisa + "%' ";
             PreparedStatement st = Conexao.getConnection().prepareStatement(SQLSelection);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
@@ -70,7 +70,7 @@ public class DAOEntregador {
     public ModelEntregador PreencherCampos(int Codigo) {
         ModelEntregador Entregador = new ModelEntregador();
         try {
-            String SQLSelection = "SELECT * FROM entregador WHERE fun_cod = ?";
+            String SQLSelection = "SELECT * FROM entregador WHERE ent_cod = ?";
             PreparedStatement st = Conexao.getConnection().prepareStatement(SQLSelection);
             st.setInt(1, Codigo);
             ResultSet rs = st.executeQuery();
