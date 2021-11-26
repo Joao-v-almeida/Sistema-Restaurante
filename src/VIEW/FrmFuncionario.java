@@ -105,6 +105,11 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
+        tbFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tbFuncionarioMousePressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbFuncionario);
 
         btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/adicionar.png"))); // NOI18N
@@ -345,6 +350,16 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
         habilitarCampos(false);
         novoCadastro();
     }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void tbFuncionarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbFuncionarioMousePressed
+        ModelFuncionario = ControllerFuncionario.controlePreencherCampos(Integer.parseInt(Modelo.getValueAt(tbFuncionario.getSelectedRow(), 0).toString()));
+        txtCod.setText(ModelFuncionario.getCodigo() + "");
+        txtNome.setText(ModelFuncionario.getNome());
+        cbCargo.setSelectedItem(ModelFuncionario.getCargo());
+        txData.setText(ModelFuncionario.getDataCad());
+        habilitarCampos(true);
+        btnEditar.setEnabled(true);
+    }//GEN-LAST:event_tbFuncionarioMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
