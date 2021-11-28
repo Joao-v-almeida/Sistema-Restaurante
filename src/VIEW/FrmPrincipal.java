@@ -59,8 +59,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCaixa = new javax.swing.JMenu();
         menuPedido = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
-        jMenuItemCliente = new javax.swing.JMenuItem();
-        jMenuItemPedidos = new javax.swing.JMenuItem();
+        jMenuRelatorioCliente = new javax.swing.JMenuItem();
+        jMenuRelatorioPedidos = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -121,21 +121,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         menuRelatorio.setText("Relatórios");
 
-        jMenuItemCliente.setText("Cliente");
-        jMenuItemCliente.addActionListener(new java.awt.event.ActionListener() {
+        jMenuRelatorioCliente.setText("Cliente");
+        jMenuRelatorioCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemClienteActionPerformed(evt);
+                jMenuRelatorioClienteActionPerformed(evt);
             }
         });
-        menuRelatorio.add(jMenuItemCliente);
+        menuRelatorio.add(jMenuRelatorioCliente);
 
-        jMenuItemPedidos.setText("Pedidos");
-        jMenuItemPedidos.addActionListener(new java.awt.event.ActionListener() {
+        jMenuRelatorioPedidos.setText("Pedidos");
+        jMenuRelatorioPedidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemPedidosActionPerformed(evt);
+                jMenuRelatorioPedidosActionPerformed(evt);
             }
         });
-        menuRelatorio.add(jMenuItemPedidos);
+        menuRelatorio.add(jMenuRelatorioPedidos);
 
         jMenuBar1.add(menuRelatorio);
 
@@ -188,7 +188,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmPedido.setVisible(true);
     }//GEN-LAST:event_menuPedidoActionPerformed
 
-    private void jMenuItemClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClienteActionPerformed
+    private void jMenuRelatorioClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuRelatorioClienteActionPerformed
         try {
            InputStream caminho = getClass().getResourceAsStream("/rel/relcliente.jasper");
            JasperPrint print = JasperFillManager.fillReport(caminho, null, conexao);
@@ -196,9 +196,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         } catch (JRException ex) {
             Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jMenuItemClienteActionPerformed
+    }//GEN-LAST:event_jMenuRelatorioClienteActionPerformed
 
-    private void jMenuItemPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPedidosActionPerformed
+    private void jMenuRelatorioPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuRelatorioPedidosActionPerformed
         try {
            InputStream caminho = getClass().getResourceAsStream("/rel/relpedido.jasper");
            JasperPrint print = JasperFillManager.fillReport(caminho, null, conexao);
@@ -206,7 +206,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         } catch (JRException ex) {
             Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jMenuItemPedidosActionPerformed
+    }//GEN-LAST:event_jMenuRelatorioPedidosActionPerformed
 
     public static void main(String args[]) {
 
@@ -238,8 +238,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItemCliente;
-    private javax.swing.JMenuItem jMenuItemPedidos;
+    private javax.swing.JMenuItem jMenuRelatorioCliente;
+    private javax.swing.JMenuItem jMenuRelatorioPedidos;
     private javax.swing.JMenu menuCadastro;
     private javax.swing.JMenu menuCaixa;
     private javax.swing.JMenuItem menuCardapio;
