@@ -200,8 +200,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPedidosActionPerformed
         try {
-           // JasperPrint print = JasperFillManager.fillReport("RELATORIOS/relrestaurante.jasper", null, conexao);
-           
            InputStream caminho = getClass().getResourceAsStream("/rel/relpedido.jasper");
            JasperPrint print = JasperFillManager.fillReport(caminho, null, conexao);
            JasperViewer.viewReport(print, false);
