@@ -1,9 +1,18 @@
 package VIEW;
 
+import Utilitarios.Conexao;
 import Utilitarios.FundoTela;
 import javax.swing.JFrame;
 import java.awt.GridLayout;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class FrmPrincipal extends javax.swing.JFrame {
     FundoTela FundoTela;
@@ -12,6 +21,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     FrmEntregador FrmEntregador;
     FrmCardapio FrmCardapio;
     FrmPedido FrmPedido;
+    Connection conexao = null;
 
     public FrmPrincipal() {
         initComponents();
@@ -32,6 +42,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         ImageIcon icone = new ImageIcon("Imagens/sistema.png");
         setIconImage(icone.getImage());
+        
+        conexao = Conexao.getConnection();
     }
 
     @SuppressWarnings("unchecked")
@@ -47,6 +59,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCaixa = new javax.swing.JMenu();
         menuPedido = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
+        jMenuItemCliente = new javax.swing.JMenuItem();
+        jMenuItemPedidos = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,6 +120,23 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menuCaixa);
 
         menuRelatorio.setText("Relatórios");
+
+        jMenuItemCliente.setText("Cliente");
+        jMenuItemCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemClienteActionPerformed(evt);
+            }
+        });
+        menuRelatorio.add(jMenuItemCliente);
+
+        jMenuItemPedidos.setText("Pedidos");
+        jMenuItemPedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemPedidosActionPerformed(evt);
+            }
+        });
+        menuRelatorio.add(jMenuItemPedidos);
+
         jMenuBar1.add(menuRelatorio);
 
         menuSair.setText("Sair");
@@ -157,6 +188,28 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmPedido.setVisible(true);
     }//GEN-LAST:event_menuPedidoActionPerformed
 
+    private void jMenuItemClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClienteActionPerformed
+        try {
+           InputStream caminho = getClass().getResourceAsStream("/rel/relcliente.jasper");
+           JasperPrint print = JasperFillManager.fillReport(caminho, null, conexao);
+           JasperViewer.viewReport(print, false);
+        } catch (JRException ex) {
+            Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItemClienteActionPerformed
+
+    private void jMenuItemPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPedidosActionPerformed
+        try {
+           // JasperPrint print = JasperFillManager.fillReport("RELATORIOS/relrestaurante.jasper", null, conexao);
+           
+           InputStream caminho = getClass().getResourceAsStream("/rel/relpedido.jasper");
+           JasperPrint print = JasperFillManager.fillReport(caminho, null, conexao);
+           JasperViewer.viewReport(print, false);
+        } catch (JRException ex) {
+            Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItemPedidosActionPerformed
+
     public static void main(String args[]) {
 
         try {
@@ -187,6 +240,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemCliente;
+    private javax.swing.JMenuItem jMenuItemPedidos;
     private javax.swing.JMenu menuCadastro;
     private javax.swing.JMenu menuCaixa;
     private javax.swing.JMenuItem menuCardapio;
