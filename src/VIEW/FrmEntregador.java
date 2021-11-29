@@ -18,6 +18,7 @@ public class FrmEntregador extends javax.swing.JInternalFrame {
 
     public FrmEntregador() {
         initComponents();
+        novoCadastro();
         habilitarCampos(false);
 
         FormatoData = new SimpleDateFormat("dd/MM/yyyy");
@@ -225,12 +226,18 @@ public class FrmEntregador extends javax.swing.JInternalFrame {
         habilitarCampos(true);
         ControllerEntregador.controleDeCodigo();
         txtCod.setText(ControllerEntregador.controleDeCodigo());
+        txtNome.setEnabled(true);
+        btnSalvar.setEnabled(true);
+        btnEditar.setEnabled(false);
     }//GEN-LAST:event_btnNovoActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         popularEntregadorBeans();
-        ControllerEntregador.verificarDados(ModelEntregador);
-        LimparCampos();
+        boolean retorno = ControllerEntregador.verificarDados(ModelEntregador);
+        if (retorno) {
+            LimparCampos();
+            novoCadastro();
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void txtBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscaActionPerformed
@@ -263,9 +270,9 @@ public class FrmEntregador extends javax.swing.JInternalFrame {
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         popularEntregadorBeans();
         ControllerEntregador.verificarDadosEditar(ModelEntregador);
-        LimparCampos();
         txtBusca.setText("");
         habilitarCampos(false);
+        novoCadastro();
     }//GEN-LAST:event_btnEditarActionPerformed
 
 
@@ -303,5 +310,11 @@ public class FrmEntregador extends javax.swing.JInternalFrame {
         txtNome.setText("");
         txtData.setText("");
     }
+    
+    final void novoCadastro() {
+        btnSalvar.setEnabled(false);
+        btnEditar.setEnabled(false);
+        btnNovo.setEnabled(true);
 
+    }
 }
