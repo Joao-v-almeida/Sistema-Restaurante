@@ -89,11 +89,11 @@ public class FrmEntregador extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Codigo", "Nome", "Rua", "Bairro", "Telefone"
+                "Codigo", "Nome"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
