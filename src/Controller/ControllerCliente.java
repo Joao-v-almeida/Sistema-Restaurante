@@ -17,20 +17,20 @@ public class ControllerCliente {
 
     public boolean verificarDados(ModelCliente Cliente) {
         if (Cliente.getNome().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoNome", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campo Nome", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
         if (Cliente.getRua().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoRua", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campo Rua", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
         if (Cliente.getBairro().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoBairro", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campo Bairro", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
         if (Cliente.getTelefone().equals("  )      -    ")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoTelefone", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoTelefone", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
         DAOCliente.cadastrarCliente(Cliente);
@@ -55,20 +55,20 @@ public class ControllerCliente {
 
     public boolean verificarDadosEditar(ModelCliente Cliente) {
         if (Cliente.getNome().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoNome", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoNome", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
 
         if (Cliente.getRua().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoRua", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoRua", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
         if (Cliente.getBairro().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoBairro", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoBairro", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
         if (Cliente.getTelefone().equals("  )      -    ")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campoTelefone", "Erro", 0, new ImageIcon("Imagens/btn_sair.png"));
+            JOptionPane.showMessageDialog(null, "Preencha o campoTelefone", "Erro", 0, new ImageIcon("Imagens/erro.png"));
             return false;
         }
         DAOCliente.editarCliente(Cliente);
