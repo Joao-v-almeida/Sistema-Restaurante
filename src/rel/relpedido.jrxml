@@ -56,10 +56,6 @@
 				</textElement>
 				<text><![CDATA[Sistema Restaurante]]></text>
 			</staticText>
-			<image>
-				<reportElement x="1" y="0" width="125" height="67" uuid="c6aa63db-8de1-403e-a3f9-f98834078689"/>
-				<imageExpression><![CDATA["C:\\Users\\User\\Desktop\\rel\\Capturar.JPG"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>
