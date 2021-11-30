@@ -68,6 +68,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Restaurante");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
         menuCadastro.setText("Cadastro");
         menuCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
